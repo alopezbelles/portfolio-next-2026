@@ -1,0 +1,462 @@
+# 🤖 Agent Instructions - Portfolio Web (Next.js)
+
+## 📋 Development Guide for AI Agents
+
+This document contains the best practices and rules that must be followed when developing or modifying code in this Next.js project.
+
+---
+
+## 🏗️ Project Structure (Next.js App Router)
+
+```
+src/
+├── app/                 # App Router pages and layouts
+│   ├── globals.css     # Global styles
+│   ├── layout.tsx      # Root layout
+│   ├── page.tsx        # Home page
+│   ├── about/          # About page route
+│   │   └── page.tsx
+│   └── projects/       # Projects page route
+│       └── page.tsx
+├── components/         # Reusable components
+│   └── ComponentName/
+│       ├── ComponentName.tsx
+│       └── ComponentName.css
+├── hooks/             # Custom hooks
+│   └── useHookName.ts
+├── lib/               # Utility functions
+├── types/             # TypeScript type definitions
+└── styles/            # Additional styles
+public/                # Static assets (images, icons, etc.)
+next.config.ts         # Next.js configuration
+tsconfig.json          # TypeScript configuration
+```
+
+---
+
+## 📘 TypeScript - Best Practices
+
+### ✅ **Mandatory Rules:**
+- **Always use strict typing** - Do not use `any`
+- **Create interfaces** for component props
+- **Type custom hooks** correctly
+- **Use union types** when appropriate
+- **Import types** with `import type` when possible
+
+### 📁 **File Extensions:**
+- **React Components**: `.tsx`
+- **Hooks and utilities**: `.ts`
+- **Configuration files**: `.ts`
+
+### 🔍 **Correct Examples:**
+
+```typescript
+// ✅ Interface for props
+interface ProjectCardProps {
+  project: Project;
+  onClick?: (project: Project) => void;
+}
+
+// ✅ Hook typing
+const [projects, setProjects] = useState<Project[]>([]);
+
+// ✅ Type imports
+import type { Project } from '../../hooks/useProjects';
+```
+
+---
+
+## ⚡ Next.js - Specific Considerations
+
+### 📁 **App Router Structure:**
+- **Pages** → `src/app/page.tsx`
+- **Layouts** → `src/app/layout.tsx`
+- **Routes** → folders with `page.tsx`
+- **Server Components** by default
+- **Client Components** with `"use client"`
+
+### 🔧 **Next.js Specific Files:**
+
+#### **Page Component:**
+```typescript
+// src/app/page.tsx
+export default function HomePage() {
+  return (
+    <main className="home-page">
+      <h1>Welcome</h1>
+    </main>
+  );
+}
+```
+
+#### **Layout Component:**
+```typescript
+// src/app/layout.tsx
+import type { Metadata } from 'next';
+import './globals.css';
+
+export const metadata: Metadata = {
+  title: 'Portfolio Web',
+  description: 'My personal portfolio',
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="es">
+      <body>
+        {children}
+      </body>
+    </html>
+  );
+}
+```
+
+#### **Client Component:**
+```typescript
+// src/components/InteractiveButton/InteractiveButton.tsx
+'use client';
+
+import { useState } from 'react';
+import './InteractiveButton.css';
+
+interface InteractiveButtonProps {
+  text: string;
+  onClick?: () => void;
+}
+
+export default function InteractiveButton({ text, onClick }: InteractiveButtonProps) {
+  const [isClicked, setIsClicked] = useState(false);
+  
+  return (
+    <button 
+      className="interactive-button"
+      onClick={() => {
+        setIsClicked(!isClicked);
+        onClick?.();
+      }}
+    >
+      {text}
+    </button>
+  );
+}
+```
+
+### 🎯 **Server vs Client Components:**
+
+| Component Type | Use When | Location |
+|---------------|----------|----------|
+| **Server Component** | Static content, data fetching | `src/app/*/page.tsx` |
+| **Client Component** | Interactivity, state, effects | `src/components/` |
+
+---
+
+## ⚛️ React - Component Structure
+
+### 📂 **Organization:**
+- **Reusable components** → `src/components/`
+- **Pages** → `src/app/` (with `page.tsx`)
+- **Layouts** → `src/app/layout.tsx` or route-specific layouts
+- **Each component** in its own folder
+- **CSS file** for each component
+
+### 🏗️ **Component Folder Structure:**
+```
+ComponentName/
+├── ComponentName.tsx    # Main component
+└── ComponentName.css    # Specific styles
+```
+
+### 📝 **Component Template:**
+```typescript
+// ComponentName.tsx
+import './ComponentName.css';
+import type { ComponentProps } from './types'; // if complex
+
+interface ComponentNameProps {
+  // Component props
+}
+
+function ComponentName({ prop1, prop2 }: ComponentNameProps) {
+  return (
+    <section className="component-name">
+      {/* Semantic content */}
+    </section>
+  );
+}
+
+export default ComponentName;
+```
+
+---
+
+## 🏷️ Semantic HTML - Best Practices
+
+### ✅ **Use appropriate semantic tags:**
+
+| Use Case | Correct Tag | ❌ Avoid |
+|----------|-------------|----------|
+| Articles/Cards | `<article>` | `<div>` |
+| Navigation | `<nav>` | `<div>` |
+| Main content | `<main>` | `<div>` |
+| Sections | `<section>` | `<div>` |
+| Headings | `<h1>`, `<h2>`, etc. | `<div>` with styles |
+| Lists | `<ul>`, `<ol>`, `<li>` | repeated `<div>` |
+| Buttons | `<button>` | `<div>` with click |
+| Images | `<figure>`, `<img>` | `<div>` with background |
+
+### 🎯 **Semantic Examples:**
+
+```tsx
+// ✅ CORRECT - Semantic
+<article className="project-card">
+  <figure className="image-container">
+    <img src="..." alt="Project title" />
+  </figure>
+  <div className="content">
+    <h3 className="title">Title</h3>
+    <div className="technologies">React, Next.js, TypeScript</div>
+  </div>
+</article>
+
+// ❌ INCORRECT - Non-semantic
+<div className="project-card-container">
+  <div className="project-card-image-wrapper">
+    <div className="project-card-image" style={{backgroundImage: '...'}}></div>
+  </div>
+  <div className="project-card-content-section">
+    <div className="project-card-title-text">Title</div>
+    <div className="project-card-tech-display">React, Next.js, TypeScript</div>
+  </div>
+</div>
+```
+
+### 📋 **CSS Class Rules:**
+- **Simple and descriptive** names
+- **No redundant prefixes** (e.g., `title` instead of `movie-card-title`)
+- **Use BEM only when necessary**
+- **Classes that reflect semantics**
+
+---
+
+## 🎨 Modern CSS - Nesting and Scalability
+
+### 🎨 **Design System Variables:**
+- **Global variables** están centralizadas en `src/styles/variables.css`
+- **Usar siempre variables CSS** en lugar de valores hardcoded
+- **Variables disponibles:** colores, espaciado, tipografía, sombras, transiciones, breakpoints
+- **Importar variables** automáticamente a través de `index.css`
+
+```css
+/* ✅ CORRECT - Using CSS variables */
+.component {
+  background: var(--color-bg-surface);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-all);
+}
+
+/* ❌ INCORRECT - Hardcoded values */
+.component {
+  background: #333333;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+```
+
+### ✅ **Nesting Structure:**
+
+```css
+/* ✅ CORRECT - Logical nesting */
+.component-name {
+  /* Container styles */
+  
+  .title {
+    /* Title styles */
+    
+    &:hover {
+      /* Title hover */
+    }
+  }
+  
+  .content {
+    /* Content styles */
+    
+    .rating {
+      /* Rating styles */
+      
+      .star {
+        /* Star styles */
+      }
+    }
+  }
+  
+  /* Component states */
+  &:hover {
+    /* Complete component hover */
+    
+    .title {
+      /* Title changes during hover */
+    }
+  }
+  
+  &.variant-large {
+    /* Size modifier */
+  }
+  
+  /* Nested media queries */
+  @media (max-width: 768px) {
+    /* Component responsive */
+    
+    .title {
+      /* Title responsive */
+    }
+  }
+}
+```
+
+### 🏗️ **Organization Principles:**
+
+1. **Base styles** of the component first
+2. **Child elements** nested logically  
+3. **States** (`:hover`, `:focus`, etc.) with `&`
+4. **Modifiers** (`.large`, `.small`) with `&`
+5. **Media queries** at the end, nested
+
+### 📱 **Responsive Design:**
+
+**BREAKPOINTS ESTÁNDAR OBLIGATORIOS:**
+- `1024px` - Tablet landscape / Desktop pequeño
+- `768px` - Tablet portrait / Mobile landscape  
+- `480px` - Mobile portrait
+
+```css
+.component {
+  /* Desktop-first styles */
+  
+  @media (max-width: 1024px) {
+    /* Tablet landscape / Desktop pequeño */
+  }
+  
+  @media (max-width: 768px) {
+    /* Tablet portrait / Mobile landscape */
+  }
+  
+  @media (max-width: 480px) {
+    /* Mobile portrait */
+  }
+}
+```
+
+**⚠️ IMPORTANTE:** Usar ÚNICAMENTE estos 3 breakpoints en todo el proyecto. No usar otros valores como 600px, 900px, 1200px, etc.
+
+---
+
+## 🔧 Custom Hooks
+
+### 📍 **Location:** `src/hooks/`
+### 📝 **Naming:** `use + Description` (e.g., `useProjects`, `useAuth`)
+### 📁 **Extension:** `.ts`
+
+```typescript
+// useExample.ts
+import { useState, useEffect } from 'react';
+
+export const useExample = () => {
+  const [data, setData] = useState<DataType[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  
+  // Hook logic
+  
+  return { data, loading };
+};
+```
+
+---
+
+## 📂 Imports and Exports
+
+### ✅ **Import Order:**
+1. **React and external libraries**
+2. **Custom hooks**
+3. **Own components**
+4. **Types and interfaces**
+5. **CSS files**
+
+```typescript
+// ✅ CORRECT
+import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useProjects } from '../../hooks/useProjects';
+import ProjectCard from '../ProjectCard/ProjectCard';
+import type { Project } from '../../types/Project';
+import './ComponentName.css';
+```
+
+---
+
+## 🎯 Specific Use Cases
+
+### 🚀 **For Project Components:**
+- Use `<article>` for project cards
+- `<figure>` for image containers
+- `<h3>` or `<h4>` for project titles
+- Simple classes: `.project-card`, `.title`, `.technologies`
+
+### 🔍 **For Searches:**
+- `<form>` for search forms
+- `<input type="search">` for search fields
+- Loading and error states clearly handled
+
+### 📱 **For Navigation:**
+- `<nav>` for navigation bars
+- `<ul>` and `<li>` for link lists
+- Responsive design always considered
+
+---
+
+## 🚫 What NOT to Do
+
+### ❌ **TypeScript:**
+- Don't use `any`
+- Don't omit types in interfaces
+- Don't create `.js` files instead of `.ts/.tsx`
+
+### ❌ **React:**
+- Don't create components in loose files without folders
+- Don't mix logic from different domains in one component
+- Don't use `div` when there are appropriate semantic tags
+
+### ❌ **Next.js:**
+- Don't use `"use client"` unnecessarily (Server Components by default)
+- Don't create pages outside the `app/` directory
+- Don't ignore SEO metadata in layouts and pages
+
+### ❌ **CSS:**
+- Don't use excessively specific classes
+- Don't repeat styles instead of using nesting
+- Don't ignore responsive design
+
+---
+
+## ✅ Quality Checklist
+
+Before completing any task, verify:
+
+- [ ] **TypeScript:** Correct types, no `any`, appropriate extensions
+- [ ] **Semantics:** Appropriate HTML tags, accessibility considered  
+- [ ] **CSS:** Logical nesting, responsive, simple class names
+- [ ] **Structure:** Files in correct folders, organized imports
+- [ ] **Functionality:** Component works according to specifications
+- [ ] **Consistency:** Follows established patterns in the project
+
+---
+
+*📅 Last updated: November 3, 2025*
+*🤖 For use by AI agents in Portfolio Web (Next.js) development*
