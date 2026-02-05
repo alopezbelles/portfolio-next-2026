@@ -1,0 +1,130 @@
+/* Importar variables centralizadas */
+@import '../styles/variables.css';
+
+.home-page {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-primary);
+}
+
+.main {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 800px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: var(--color-bg-surface);
+  padding: var(--spacing-4xl) var(--spacing-3xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: var(--spacing-lg);
+}
+
+.intro h1 {
+  max-width: 320px;
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  letter-spacing: -2.4px;
+  text-wrap: balance;
+  color: var(--color-text-primary);
+}
+
+.intro p {
+  max-width: 440px;
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  text-wrap: balance;
+  color: var(--color-text-secondary);
+}
+
+.intro a {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.ctas {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 440px;
+  gap: var(--spacing-md);
+  font-size: var(--font-size-sm);
+}
+
+.ctas a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  padding: 0 var(--spacing-md);
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  transition: var(--transition-all);
+  cursor: pointer;
+  width: fit-content;
+  font-weight: var(--font-weight-medium);
+}
+
+a.primary {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  gap: var(--spacing-sm);
+}
+
+a.secondary {
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  a.primary:hover {
+    background: var(--color-primary-dark);
+    border-color: transparent;
+  }
+
+  a.secondary:hover {
+    background: var(--color-bg-secondary);
+    border-color: transparent;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+  }
+
+  .intro {
+    gap: var(--spacing-md);
+  }
+
+  .intro h1 {
+    font-size: var(--font-size-3xl);
+    line-height: var(--line-height-tight);
+    letter-spacing: -1.92px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+  
+  .ctas {
+    flex-direction: column;
+  }
+}

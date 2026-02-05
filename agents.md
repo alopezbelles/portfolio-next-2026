@@ -248,7 +248,7 @@ export default ComponentName;
 - **Global variables** están centralizadas en `src/styles/variables.css`
 - **Usar siempre variables CSS** en lugar de valores hardcoded
 - **Variables disponibles:** colores, espaciado, tipografía, sombras, transiciones, breakpoints
-- **Importar variables** automáticamente a través de `index.css`
+- **Importar variables** automáticamente a través de `globals.css`
 
 ```css
 /* ✅ CORRECT - Using CSS variables */
