@@ -14,10 +14,15 @@
   --color-bg-surface: #ffffff;
   --color-bg-gray: #eeeeee;
   --color-bg-overlay: rgba(0, 0, 0, 0.5);
+  --color-bg-primary-buttons: linear-gradient(
+      135deg,
+      rgba(99, 102, 241, 0.8),
+      rgba(168, 85, 247, 0.8)
+    );
   
   /* Colores de texto */
   --color-text-primary: #1f2937;
-  --color-text-secondary: #6b7280;
+  --color-text-secondary: #424242;
   --color-text-muted: #9ca3af;
   --color-text-inverse: #ffffff;
   

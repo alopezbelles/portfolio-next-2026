@@ -1,14 +1,48 @@
 import Image from "next/image";
 import Link from "next/link";
 import "./page.css";
+import "../styles/dynamic-bg.css";
 
-export default function Home() {
+// import { getProjects } from "@/lib/getProjects";
+// import ProjectCard from "@/components/ProjectCard/ProjectCard";
+
+export default async function Home() {
+  // const projects = await getProjects();
+
   return (
     <div className="home-page">
       <main className="main-content">
         {/* About Me Section */}
         <section className="hero-container">
           <div className="hero-section">
+            <div className="background">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
             <div className="hero-content">
               <div className="hero-image">
                 <figure className="profile-figure">
@@ -23,13 +57,13 @@ export default function Home() {
                 </figure>
                 <div>
                   <h2 className="hero-name">Alejandro López</h2>
-                  <h2 className="hero-subtitle">Frontend Developer | Product Engineer</h2>
+                  <h2 className="hero-subtitle">
+                    Frontend Developer | Product Engineer
+                  </h2>
                 </div>
               </div>
               <div className="hero-text">
-                <h1 className="hero-title">
-                  Hi, I'm <span className="highlight">Alex.👋</span>
-                </h1>
+                <h1 className="hero-title">Hi, I'm Alex.👋</h1>
                 <p className="hero-description">
                   Passionate developer specializing in creating modern,
                   accessible, and performant web applications using React,
@@ -49,26 +83,41 @@ export default function Home() {
           </div>
           <div className="hero-multimedia">
             <h1>Lastest Projects:</h1>
-            <Image
-              src="/cover.png"
-              alt="Hero Image - Web Development"
-              width={500}
-              height={300}
-              className="hero-illustration"
-            />
-            <Image
-              src="/cover-2.png"
-              alt="Hero Image - Web Development"
-              width={500}
-              height={300}
-              className="hero-illustration"
-            />
-           
+            <div className="project-image-container">
+              <Image
+                src="/cover.png"
+                alt="Hero Image - Web Development"
+                width={500}
+                height={300}
+                className="hero-illustration"
+              />
+              <div className="project-overlay">
+                <div className="overlay-content">
+                  <span className="view-project-text">View Project</span>
+                  <span className="arrow-icon">→</span>
+                </div>
+              </div>
+            </div>
+            <div className="project-image-container">
+              <Image
+                src="/cover-2.png"
+                alt="Hero Image - Web Development"
+                width={500}
+                height={300}
+                className="hero-illustration"
+              />
+              <div className="project-overlay">
+                <div className="overlay-content">
+                  <span className="view-project-text">View Project</span>
+                  <span className="arrow-icon">→</span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* My Work Section */}
-        <section className="work-section">
+        <section id="work-section" className="work-section">
           <div className="section-header">
             <h2 className="section-title">My Work</h2>
             <p className="section-subtitle">
@@ -77,77 +126,11 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="projects-grid">
-            {/*TODO: Project placeholders - Will be replaced with dynamic content later */}
-            <article className="project-card">
-              <figure className="project-image">
-                <Image
-                  src="/project-placeholder.svg"
-                  alt="Project 1"
-                  width={400}
-                  height={250}
-                  className="project-img"
-                />
-              </figure>
-              <div className="project-content">
-                <h3 className="project-title">Project Title 1</h3>
-                <p className="project-description">
-                  Brief description of the project and the technologies used.
-                </p>
-                <div className="project-technologies">
-                  <span className="tech-tag">React</span>
-                  <span className="tech-tag">Next.js</span>
-                  <span className="tech-tag">TypeScript</span>
-                </div>
-              </div>
-            </article>
-
-            <article className="project-card">
-              <figure className="project-image">
-                <Image
-                  src="/project-placeholder.svg"
-                  alt="Project 2"
-                  width={400}
-                  height={250}
-                  className="project-img"
-                />
-              </figure>
-              <div className="project-content">
-                <h3 className="project-title">Project Title 2</h3>
-                <p className="project-description">
-                  Brief description of the project and the technologies used.
-                </p>
-                <div className="project-technologies">
-                  <span className="tech-tag">Vue.js</span>
-                  <span className="tech-tag">Node.js</span>
-                  <span className="tech-tag">MongoDB</span>
-                </div>
-              </div>
-            </article>
-
-            <article className="project-card">
-              <figure className="project-image">
-                <Image
-                  src="/project-placeholder.svg"
-                  alt="Project 3"
-                  width={400}
-                  height={250}
-                  className="project-img"
-                />
-              </figure>
-              <div className="project-content">
-                <h3 className="project-title">Project Title 3</h3>
-                <p className="project-description">
-                  Brief description of the project and the technologies used.
-                </p>
-                <div className="project-technologies">
-                  <span className="tech-tag">React Native</span>
-                  <span className="tech-tag">Firebase</span>
-                  <span className="tech-tag">JavaScript</span>
-                </div>
-              </div>
-            </article>
-          </div>
+          {/* <div className="projects-grid">
+            {projects.map((project) => (
+              <ProjectCard key={project._id} project={project} />
+            ))}
+          </div> */}
 
           <div className="work-footer">
             <Link href="/projects" className="view-all-projects">
