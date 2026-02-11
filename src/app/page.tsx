@@ -1,6 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import "./page.css";
+import "../styles/dynamic-bg.css";
+
+// import { getProjects } from "@/lib/getProjects";
+// import ProjectCard from "@/components/ProjectCard/ProjectCard";
 
 import { getProjects } from "@/lib/getProjects";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
@@ -14,6 +18,34 @@ export default async function Home() {
         {/* About Me Section */}
         <section className="hero-container">
           <div className="hero-section">
+            <div className="background">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
             <div className="hero-content">
               <div className="hero-image">
                 <figure className="profile-figure">
@@ -28,13 +60,13 @@ export default async function Home() {
                 </figure>
                 <div>
                   <h2 className="hero-name">Alejandro López</h2>
-                  <h2 className="hero-subtitle">Frontend Developer | Product Engineer</h2>
+                  <h2 className="hero-subtitle">
+                    Frontend Developer | Product Engineer
+                  </h2>
                 </div>
               </div>
               <div className="hero-text">
-                <h1 className="hero-title">
-                  Hi, I'm <span className="highlight">Alex.👋</span>
-                </h1>
+                <h1 className="hero-title">Hi, I'm Alex.👋</h1>
                 <p className="hero-description">
                   Passionate developer specializing in creating modern,
                   accessible, and performant web applications using React,
@@ -54,25 +86,41 @@ export default async function Home() {
           </div>
           <div className="hero-multimedia">
             <h1>Lastest Projects:</h1>
-            <Image
-              src="/cover.png"
-              alt="Hero Image - Web Development"
-              width={500}
-              height={300}
-              className="hero-illustration"
-            />
-            <Image
-              src="/cover-2.png"
-              alt="Hero Image - Web Development"
-              width={500}
-              height={300}
-              className="hero-illustration"
-            />
-           
+            <div className="project-image-container">
+              <Image
+                src="/cover.png"
+                alt="Hero Image - Web Development"
+                width={500}
+                height={300}
+                className="hero-illustration"
+              />
+              <div className="project-overlay">
+                <div className="overlay-content">
+                  <span className="view-project-text">View Project</span>
+                  <span className="arrow-icon">→</span>
+                </div>
+              </div>
+            </div>
+            <div className="project-image-container">
+              <Image
+                src="/cover-2.png"
+                alt="Hero Image - Web Development"
+                width={500}
+                height={300}
+                className="hero-illustration"
+              />
+              <div className="project-overlay">
+                <div className="overlay-content">
+                  <span className="view-project-text">View Project</span>
+                  <span className="arrow-icon">→</span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* My Work Section */}
+        <section id="work-section" className="work-section">
         <section id="work-section" className="work-section">
           <div className="section-header">
             <h2 className="section-title">My Work</h2>
