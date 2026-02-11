@@ -121,7 +121,6 @@ export default async function Home() {
 
         {/* My Work Section */}
         <section id="work-section" className="work-section">
-        <section id="work-section" className="work-section">
           <div className="section-header">
             <h2 className="section-title">My Work</h2>
             <p className="section-subtitle">
