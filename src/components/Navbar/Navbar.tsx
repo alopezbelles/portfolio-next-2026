@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import './Navbar.css';
 
@@ -20,7 +21,14 @@ export default function Navbar({}: NavbarProps) {
       <div className="navbar-container">
         {/* Logo/Brand */}
         <Link href="/" className="navbar-brand">
-          <span className="brand-text">Alejandro López</span>
+          <Image
+            src="/main-logo.png"
+            alt="Alejandro López - Portfolio"
+            width={50}
+            height={50}
+            priority
+            className="brand-logo"
+          />
         </Link>
 
         {/* Desktop Navigation */}

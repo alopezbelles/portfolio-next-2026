@@ -40,6 +40,14 @@
   font-family: var(--font-sans);
 }
 
+.brand-logo {
+  display: block;
+  height: auto;
+  max-height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
 /* Desktop Navigation */
 .navbar-nav {
   display: flex;
