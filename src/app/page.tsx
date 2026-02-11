@@ -3,9 +3,6 @@ import Link from "next/link";
 import "./page.css";
 import "../styles/dynamic-bg.css";
 
-// import { getProjects } from "@/lib/getProjects";
-// import ProjectCard from "@/components/ProjectCard/ProjectCard";
-
 import { getProjects } from "@/lib/getProjects";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 
@@ -131,7 +128,13 @@ export default async function Home() {
 
           <div className="projects-grid">
             {projects.map((project) => (
-              <ProjectCard key={project._id} project={project} />
+              <Link
+                key={project._id}
+                href={`/projects/${project.slug}`}
+                className="project-link"
+              >
+                <ProjectCard project={project} />
+              </Link>
             ))}
           </div>
 
