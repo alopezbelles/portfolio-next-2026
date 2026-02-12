@@ -16,8 +16,8 @@
   --color-bg-overlay: rgba(0, 0, 0, 0.5);
   --color-bg-primary-buttons: linear-gradient(
       135deg,
-      rgba(99, 102, 241, 0.8),
-      rgba(168, 85, 247, 0.8)
+      rgba(89, 90, 168, 0.8),
+      rgba(87, 53, 119, 0.8)
     );
   
   /* Colores de texto */
