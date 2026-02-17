@@ -14,8 +14,10 @@ export default function ProjectCard({ project }: Props) {
         <Image
           src={project.images.cover}
           alt={project.title}
-          width={250}
-          height={400}
+          fill
+          sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 275px"
+          priority={false}
+          quality={90}
           className="project-img"
         />
       </figure>
