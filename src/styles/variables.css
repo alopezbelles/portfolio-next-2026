@@ -10,9 +10,10 @@
   
   /* Colores de fondo */
   --color-bg-primary: #ffffff;
-  --color-bg-secondary: #e2e2e2;
+  --color-bg-secondary: #bbbbbb;
   --color-bg-surface: #ffffff;
   --color-bg-gray: #eeeeee;
+  --color-bg-green: #9bffb0;
   --color-bg-overlay: rgba(0, 0, 0, 0.5);
  
   
@@ -54,7 +55,7 @@
   --font-size-xl: 1.25rem;     /* 20px */
   --font-size-2xl: 1.5rem;     /* 24px */
   --font-size-3xl: 1.875rem;   /* 30px */
-  --font-size-4xl: 2.25rem;    /* 36px */
+  --font-size-4xl: 4rem;    /* 36px */
   --font-size-5xl: 5rem;       /* 48px */
   
   /* Pesos de fuente */

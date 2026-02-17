@@ -17,7 +17,7 @@
 }
 
 .background span {
-    width: 18vmin;
+    width: 50vmin;
     height: 18vmin;
     border-radius: 150vmin;
     backface-visibility: hidden;

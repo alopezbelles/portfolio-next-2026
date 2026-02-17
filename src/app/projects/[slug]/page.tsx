@@ -20,13 +20,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <article className="project-detail-page">
-      <nav className="project-nav">
-        <Link href="/" className="back-link">
-          ← Back
-        </Link>
-      </nav>
-      
       <main className="main-content-project">
+        <nav className="project-nav">
+          <Link href="/" className="back-link">
+            ← Back
+          </Link>
+        </nav>
+        
         <section className="project-info">
           <header className="project-header">
             <h1 className="project-title">{project.title}</h1>

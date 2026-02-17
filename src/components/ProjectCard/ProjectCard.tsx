@@ -14,16 +14,14 @@ export default function ProjectCard({ project }: Props) {
         <Image
           src={project.images.cover}
           alt={project.title}
-          width={400}
-          height={250}
+          width={250}
+          height={400}
           className="project-img"
         />
       </figure>
-
       <div className="project-content">
         <h3 className="project-title">{project.title}</h3>
-
-        <p className="project-description">
+        <p className="project-description-brief">
           {project.description}
         </p>
 

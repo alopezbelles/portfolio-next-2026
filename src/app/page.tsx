@@ -12,119 +12,53 @@ export default async function Home() {
   return (
     <div className="home-page">
       <main className="main-content">
-        {/* About Me Section */}
-        <section className="hero-container">
-          <div className="hero-section">
-            <div className="background">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div className="hero-content">
-              <div className="hero-image">
-                <figure className="profile-figure">
-                  <Image
-                    src="/images/image-profile.jpg"
-                    alt="Alex - Frontend Developer"
-                    width={130}
-                    height={130}
-                    priority
-                    className="profile-photo"
-                  />
-                </figure>
-                <div>
-                  <h2 className="hero-name">Alejandro López</h2>
-                  <h2 className="hero-subtitle">
-                    Frontend Developer | Product Engineer
-                  </h2>
-                </div>
-              </div>
-              <div className="hero-text">
-                <h1 className="hero-title">Hi, I'm Alex.👋</h1>
-                <p className="hero-description">
-                  Passionate developer specializing in creating modern,
-                  accessible, and performant web applications using React,
-                  Next.js, and TypeScript. I love turning complex problems into
-                  simple, beautiful designs.
-                </p>
-                <div className="hero-ctas">
-                  <Link href="/projects" className="cta-primary">
-                    View My Work
-                  </Link>
-                  <Link href="/contact" className="cta-secondary">
-                    Get in Touch
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="hero-multimedia">
-            <h1>Lastest Projects:</h1>
-            <div className="project-image-container">
+        {/* Hero Section */}
+        <section className="hero-section">
+          <header className="hero-profile">
+            <figure className="profile-figure">
               <Image
-                src="/cover.png"
-                alt="Hero Image - Web Development"
-                width={500}
-                height={300}
-                className="hero-illustration"
+                src="/images/image-profile.jpg"
+                alt="Alex - Frontend Developer"
+                width={130}
+                height={130}
+                priority
+                className="profile-photo"
               />
-              <div className="project-overlay">
-                <div className="overlay-content">
-                  <span className="view-project-text">View Project</span>
-                  <span className="arrow-icon">→</span>
-                </div>
-              </div>
+            </figure>
+            <div className="profile-info">
+              <span className="work-tag">
+                <span className="status-indicator"></span>
+                Available for work
+              </span>
+              <h2 className="hero-name">Hi, I'm Alex.👋</h2>
             </div>
-            <div className="project-image-container">
-              <Image
-                src="/cover-2.png"
-                alt="Hero Image - Web Development"
-                width={500}
-                height={300}
-                className="hero-illustration"
-              />
-              <div className="project-overlay">
-                <div className="overlay-content">
-                  <span className="view-project-text">View Project</span>
-                  <span className="arrow-icon">→</span>
-                </div>
-              </div>
-            </div>
+          </header>
+          
+          <div className="hero-content">
+            <h1 className="hero-title">
+              Alejandro López<br />
+              Full Stack Developer
+            </h1>
+            <p className="hero-description">
+              Passionate developer specializing in creating modern,
+              accessible, and performant web applications using React,
+              Next.js, and TypeScript. I love turning complex problems into
+              simple, beautiful designs.
+            </p>
+            <nav className="hero-ctas">
+              <Link href="/projects" className="cta-primary">
+                View My Work
+              </Link>
+              <Link href="/contact" className="cta-secondary">
+                Get in Touch
+              </Link>
+            </nav>
           </div>
         </section>
 
-        {/* My Work Section */}
-        <section id="work-section" className="work-section">
-          <div className="section-header">
-            <h2 className="section-title">My Work</h2>
-            <p className="section-subtitle">
-              A selection of recent projects that showcase my skills and
-              creativity
-            </p>
-          </div>
+        {/* Work Section */}
+        <section className="work-section">
+          <h2 className="section-title">Selected Works</h2>
 
           <div className="projects-grid">
             {projects.map((project) => (
@@ -138,11 +72,11 @@ export default async function Home() {
             ))}
           </div>
 
-          <div className="work-footer">
+          <footer className="work-footer">
             <Link href="/projects" className="view-all-projects">
               View All Projects →
             </Link>
-          </div>
+          </footer>
         </section>
       </main>
     </div>
