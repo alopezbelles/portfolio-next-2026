@@ -17,7 +17,8 @@ export default function ProjectCard({ project }: Props) {
           fill
           sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 275px"
           priority={false}
-          quality={90}
+          // quality={90}
+          loading="eager"
           className="project-img"
         />
       </figure>
