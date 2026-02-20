@@ -141,11 +141,6 @@ function HomePage({ projects }: HomePageProps) {
               <motion.div
                 key={project._id}
                 variants={projectCardVariant}
-                whileHover={{ 
-                  y: -8, 
-                  scale: 1.02,
-                  transition: { duration: 0.2, ease: "easeOut" }
-                }}
                 whileTap={{ scale: 0.98 }}
               >
                 <Link
