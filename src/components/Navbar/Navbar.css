@@ -73,7 +73,7 @@
 
   &:hover {
     color: var(--color-primary);
-    background: var(--color-bg-secondary);
+    font-weight: bold;
   }
 
   /* Active link indicator */

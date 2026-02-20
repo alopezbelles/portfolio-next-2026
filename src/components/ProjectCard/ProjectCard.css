@@ -47,13 +47,18 @@
   color: var(--color-text-secondary);
   line-height: var(--line-height-normal);
   margin: 0 0 var(--spacing-lg) 0;
+  
+  /* Text clamp implementation */
   display: -webkit-box;
   -webkit-line-clamp: 3; 
-  line-clamp: 3; 
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  flex-grow: 1; 
+  
+  /* Fallback for better compatibility */
+  max-height: calc(var(--line-height-normal) * 3em);
+  word-wrap: break-word;
 }
 
 .project-technologies {
@@ -62,3 +67,31 @@
   gap: var(--spacing-sm);
 }
 
+@media (max-width: 480px) {
+  .project-card {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .project-image {
+    flex: none;
+    height: 180px;
+  }
+  
+  .project-content {
+    padding: var(--spacing-md);
+  }
+  
+  .project-description-brief {
+    display: none;
+  }
+  
+  .project-technologies {
+    margin-top: var(--spacing-sm);
+  }
+
+  .tech-tag {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+}
