@@ -11,7 +11,7 @@
 }
 
 .project-image {
-  position: relative; 
+  position: relative;
   overflow: hidden;
   height: calc(var(--spacing-3xl) * 4.33); /* 260px */
   flex-shrink: 0;
@@ -34,7 +34,8 @@
 }
 
 .project-title {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-xl);
+  text-align: center;
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
   margin: 0 0 var(--spacing-sm) 0;
@@ -46,7 +47,7 @@
   line-height: var(--line-height-normal);
   margin: 0 0 var(--spacing-md) 0;
   display: -webkit-box;
-  -webkit-line-clamp: 1; 
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -59,24 +60,27 @@
 }
 
 @media (max-width: 768px) {
-  
   .project-content {
     padding: var(--spacing-sm);
   }
-  
+
+  .project-technologies {
+    justify-content: center;
+  }
+
   .project-title {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-xl);
+    text-align: center;
+  }
+
+  .tech-tag {
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
   }
 }
 
 @media (max-width: 480px) {
-  
-  .project-image {
-    height: calc(var(--spacing-xl) * 3); 
-  }
-
-  .tech-tag {
-    font-size: var(--font-size-xs);
-    padding: var(--spacing-xs) var(--spacing-sm);
+  .project-description-brief {
+    display: none;
   }
 }

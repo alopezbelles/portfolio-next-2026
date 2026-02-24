@@ -121,7 +121,7 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
   gap: var(--spacing-xl);
   margin-bottom: var(--spacing-4xl);
 }
@@ -296,12 +296,13 @@
   }
   
   .section-title {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-3xl);
     margin-bottom: var(--spacing-lg);
+    text-align: center;
   }
   
   .projects-grid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-xl);
   }
 }
