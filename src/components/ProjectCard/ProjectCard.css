@@ -1,24 +1,23 @@
 .project-card {
   background: var(--color-bg-surface);
-  height: 300px; 
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-card);
   transition: var(--transition-all);
   border: 1px solid var(--color-border);
   display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .project-image {
-  margin: 0;
   position: relative; 
   overflow: hidden;
-  flex: 1; 
+  height: calc(var(--spacing-3xl) * 4.33); /* 260px */
+  flex-shrink: 0;
 }
 
 .project-img {
-  width: 100%;
-  height: 100%; 
   object-fit: cover;
   transition: var(--transition-all);
 
@@ -29,36 +28,28 @@
 
 .project-content {
   padding: var(--spacing-md);
-  flex: 1; 
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
+  flex-grow: 1;
 }
 
 .project-title {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
-  margin: 0 0 var(--spacing-md) 0;
+  margin: 0 0 var(--spacing-sm) 0;
 }
 
 .project-description-brief {
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
   line-height: var(--line-height-normal);
-  margin: 0 0 var(--spacing-lg) 0;
-  
-  /* Text clamp implementation */
+  margin: 0 0 var(--spacing-md) 0;
   display: -webkit-box;
-  -webkit-line-clamp: 3; 
-  line-clamp: 3;
+  -webkit-line-clamp: 1; 
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  
-  /* Fallback for better compatibility */
-  max-height: calc(var(--line-height-normal) * 3em);
-  word-wrap: break-word;
 }
 
 .project-technologies {
@@ -67,27 +58,21 @@
   gap: var(--spacing-sm);
 }
 
-@media (max-width: 480px) {
-  .project-card {
-    flex-direction: column;
-    height: auto;
-  }
-  
-  .project-image {
-    flex: none;
-    height: 180px;
-  }
+@media (max-width: 768px) {
   
   .project-content {
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm);
   }
   
-  .project-description-brief {
-    display: none;
+  .project-title {
+    font-size: var(--font-size-base);
   }
+}
+
+@media (max-width: 480px) {
   
-  .project-technologies {
-    margin-top: var(--spacing-sm);
+  .project-image {
+    height: calc(var(--spacing-xl) * 3); 
   }
 
   .tech-tag {

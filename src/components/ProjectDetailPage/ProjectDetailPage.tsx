@@ -175,7 +175,7 @@ function ProjectDetailPage({ project }: ProjectDetailPageProps) {
                   >
                     <Image
                       src={img}
-                      alt={`${project.title} imagen ${idx + 1}`}
+                      alt={`${project.title} image ${idx + 1}`}
                       width={isFullWidth ? 800 : 400}
                       height={isFullWidth ? 450 : 300}
                       className="gallery-image"
