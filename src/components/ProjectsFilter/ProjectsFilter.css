@@ -1,0 +1,103 @@
+/* Importar variables centralizadas */
+@import "../../styles/variables.css";
+
+/* ======================
+   PROJECTS FILTER
+   ====================== */
+
+.projects-filter {
+  width: 100%;
+}
+
+/* ======================
+   FILTER PILLS
+   ====================== */
+
+.filter-pills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xl) 0 var(--spacing-2xl) 0;
+  margin: 0;
+}
+
+.filter-pill {
+  background: var(--color-bg-gray);
+  color: var(--color-text-primary);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-all);
+  outline: none;
+  
+  &:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  
+  /* Estado activo */
+  &.active {
+    background: var(--color-primary);
+    color: white;
+    box-shadow: var(--shadow-md);
+    
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-lg);
+    }
+  }
+}
+
+/* ======================
+   RESPONSIVE BREAKPOINTS
+   ====================== */
+
+@media (max-width: 1024px) {
+  .filter-pills {
+    padding: var(--spacing-lg) 0 var(--spacing-xl) 0;
+    gap: var(--spacing-sm);
+  }
+  
+  .filter-pill {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-pills {
+    padding: var(--spacing-md) 0 var(--spacing-lg) 0;
+    gap: var(--spacing-xs);
+  }
+  
+  .filter-pill {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-pills {
+    flex-wrap: wrap;
+    padding: var(--spacing-sm) 0 var(--spacing-md) 0;
+    gap: var(--spacing-xs);
+  }
+  
+  .filter-pill {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-xs);
+    flex: 1;
+    min-width: fit-content;
+  }
+}

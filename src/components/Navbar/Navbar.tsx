@@ -39,7 +39,7 @@ export default function Navbar({}: NavbarProps) {
             </Link>
           </li>
           <li className="nav-item">
-            <Link href="/about" className="nav-link">
+            <Link href="/projects" className="nav-link">
               Projects
             </Link>
           </li>
