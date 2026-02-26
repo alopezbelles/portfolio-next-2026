@@ -108,43 +108,7 @@
    WORK SECTION
    ====================== */
 
-.work-section {
-  padding: var(--spacing-xl) 0;
-}
 
-.section-title {
-  font-size: var(--font-size-4xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-primary);
-  margin: 0 0 var(--spacing-2xl) 0;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr));
-  gap: var(--spacing-xl);
-  margin-bottom: var(--spacing-4xl);
-}
-
-.work-footer {
-  text-align: center;
-}
-
-.view-all-projects {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  color: var(--color-primary);
-  text-decoration: none;
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-lg);
-  transition: var(--transition-all);
-
-  &:hover {
-    color: var(--color-primary-dark);
-    transform: translateX(4px);
-  }
-}
 
 /* ======================
    ANIMATIONS
@@ -198,14 +162,7 @@
   .hero-description {
     max-width: 100%;
   }
-  
-  .work-section {
-    padding: var(--spacing-3xl) 0;
-  }
-  
-  .section-title {
-    font-size: var(--font-size-3xl);
-  }
+
 }
 
 @media (max-width: 768px) {
@@ -289,19 +246,5 @@
   
   .hero-ctas {
     gap: var(--spacing-xs);
-  }
-  
-  .work-section {
-    padding: var(--spacing-xl) 0;
-  }
-  
-  .section-title {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--spacing-lg);
-  }
-  
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-sm);
   }
 }
