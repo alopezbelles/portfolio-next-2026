@@ -204,9 +204,9 @@
     }
   }
   
-  .gallery-alternating {
+  /* .gallery-alternating {
     gap: var(--spacing-md);
-  }
+  } */
   
   .project-links {
     flex-direction: column;
@@ -238,25 +238,16 @@
       padding: var(--spacing-xs) var(--spacing-sm);
       font-size: var(--font-size-xs);
     }
-  }
-  
-  .cta-primary,
-  .cta-secondary {
-    padding: var(--spacing-sm) var(--spacing-md);
-    font-size: var(--font-size-sm);
-  }
-  
+  }  
+
   .gallery-alternating {
     .gallery-item {
-      border-radius: var(--radius-lg);
+      border-radius: var(--radius-sm);
       
       &.gallery-item-full,
       &.gallery-item-half {
         flex: 1 1 100%;
-        
-        .gallery-image {
-          aspect-ratio: 16/10;
-        }
+
       }
     }
   }

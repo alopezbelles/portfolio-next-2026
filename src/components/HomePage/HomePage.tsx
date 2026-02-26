@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
-import ProjectCard from "@/components/ProjectCard/ProjectCard";
+import ProjectsSection from "@/components/ProjectsSection/ProjectsSection";
 import type { Project } from "@/types/project";
 import "./HomePage.css";
 
@@ -25,25 +25,6 @@ const staggerContainer: Variants = {
     transition: {
       staggerChildren: 0.2,
     },
-  },
-};
-
-const projectsStagger: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const projectCardVariant: Variants = {
-  hidden: { opacity: 0, y: 30, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.5, ease: "easeOut" },
   },
 };
 
@@ -120,45 +101,11 @@ function HomePage({ projects }: HomePageProps) {
         </motion.section>
 
         {/* Work Section */}
-        <motion.section 
-          className="work-section"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <motion.h2 
-            className="section-title"
-            variants={fadeUp}
-          >
-            Selected Works
-          </motion.h2>
-
-          <motion.div 
-            className="projects-grid"
-            variants={projectsStagger}
-          >
-            {projects.map((project) => (
-              <motion.div
-                key={project._id}
-                variants={projectCardVariant}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Link
-                  href={`/projects/${project.slug}`}
-                  className="project-link"
-                >
-                  <ProjectCard project={project} />
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          <footer className="work-footer">
-            <Link href="/projects" className="view-all-projects">
-              View All Projects →
-            </Link>
-          </footer>
-        </motion.section>
+        <ProjectsSection 
+          projects={projects}
+          showFeaturedOnly={true}
+          showViewAllLink={true}
+        />
       </main>
     </div>
   );
