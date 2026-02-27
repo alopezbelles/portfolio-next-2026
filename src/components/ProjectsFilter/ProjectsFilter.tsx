@@ -49,7 +49,7 @@ function ProjectsFilter({ projects }: ProjectsFilterProps) {
       <ProjectsSection 
         key={`projects-${activeFilter}-${filteredProjects.length}`}
         projects={filteredProjects}
-        title="All Projects"
+        title=""
         showFeaturedOnly={false}
         showViewAllLink={false}
       />
