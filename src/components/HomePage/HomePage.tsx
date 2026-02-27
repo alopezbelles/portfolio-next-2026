@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import ProjectsSection from "@/components/ProjectsSection/ProjectsSection";
+import AboutSection from "@/components/AboutSection/AboutSection";
 import type { Project } from "@/types/project";
 import "./HomePage.css";
 
@@ -40,10 +41,7 @@ function HomePage({ projects }: HomePageProps) {
           animate="visible"
         >
           <header className="hero-profile">
-            <motion.figure
-              className="profile-figure"
-              variants={fadeUp}              
-            >
+            <motion.figure className="profile-figure" variants={fadeUp}>
               <Image
                 src="/images/image-profile.jpg"
                 alt="Alex - Frontend Developer"
@@ -53,10 +51,7 @@ function HomePage({ projects }: HomePageProps) {
                 className="profile-photo"
               />
             </motion.figure>
-            <motion.div 
-              className="profile-info"
-              variants={fadeUp}
-            >
+            <motion.div className="profile-info" variants={fadeUp}>
               <span className="work-tag">
                 <span className="status-indicator"></span>
                 Available for work
@@ -81,18 +76,26 @@ function HomePage({ projects }: HomePageProps) {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                style={{ flex: 1, display: 'flex' }}
+                style={{ flex: 1, display: "flex" }}
               >
-                <Link href="/projects" className="cta-primary" style={{ flex: 1 }}>
+                <Link
+                  href="/projects"
+                  className="cta-primary"
+                  style={{ flex: 1 }}
+                >
                   View My Work
                 </Link>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                style={{ flex: 1, display: 'flex' }}
+                style={{ flex: 1, display: "flex" }}
               >
-                <Link href="/contact" className="cta-secondary" style={{ flex: 1 }}>
+                <Link
+                  href="/contact"
+                  className="cta-secondary"
+                  style={{ flex: 1 }}
+                >
                   Get in Touch
                 </Link>
               </motion.div>
@@ -101,12 +104,14 @@ function HomePage({ projects }: HomePageProps) {
         </motion.section>
 
         {/* Work Section */}
-        <ProjectsSection 
+        <ProjectsSection
           projects={projects}
           showFeaturedOnly={true}
           showViewAllLink={true}
         />
       </main>
+
+      <AboutSection />
     </div>
   );
 }

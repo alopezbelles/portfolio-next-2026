@@ -2,6 +2,7 @@
 import { motion, Variants } from "framer-motion";
 import ProjectsFilter from "@/components/ProjectsFilter/ProjectsFilter";
 import type { Project } from "@/types/project";
+import "./ProjectsPage.css";
 
 interface ProjectsPageProps {
   projects: Project[];

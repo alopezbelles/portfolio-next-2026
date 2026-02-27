@@ -1,0 +1,108 @@
+/* Importar variables centralizadas */
+@import "../../styles/variables.css";
+
+.about-content {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.about-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.about-description {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0;
+  max-width: 90%;
+}
+
+.about-stats {
+  display: flex;
+  gap: var(--spacing-5xl);
+  /* justify-content: space-around; */
+  /* align-items: start; */
+}
+
+.profile-figure {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.profile-photo-about {
+  border-radius: var(--radius-xl);
+  object-fit: cover;
+  width: 400px;
+  height: 400px;
+}
+
+/* ======================
+   RESPONSIVE BREAKPOINTS
+   ====================== */
+
+@media (max-width: 1024px) {
+  .about-content {
+    gap: var(--spacing-md);
+  }
+
+  .about-stats {
+    gap: var(--spacing-4xl);
+  }
+
+  .about-description {
+    max-width: 100%;
+  }
+
+  .profile-photo-about {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    align-items: center;
+  }
+
+  .about-stats {
+    /* flex-direction: column; */
+    gap: var(--spacing-2xl);
+  }
+
+  .about-description {
+    font-size: var(--font-size-base);
+  }
+  .profile-photo-about {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content {
+    gap: var(--spacing-2xl);
+  }
+
+  .about-info {
+    gap: var(--spacing-xl);
+  }
+
+  .about-stats {
+    gap: var(--spacing-xl);
+  }
+
+  .about-description {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
+  }
+
+   .profile-photo-about {
+    width: 300px;
+    height: 300px;
+  }
+}
