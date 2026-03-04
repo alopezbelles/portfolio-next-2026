@@ -81,7 +81,6 @@
   }
   
   .filter-pill {
-    padding: var(--spacing-xs) var(--spacing-md);
     font-size: var(--font-size-sm);
   }
 }
@@ -94,7 +93,6 @@
   }
   
   .filter-pill {
-    padding: var(--spacing-xs) var(--spacing-sm);
     font-size: var(--font-size-xs);
     flex: 1;
     min-width: fit-content;

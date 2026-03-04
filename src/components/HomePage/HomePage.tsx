@@ -64,13 +64,13 @@ function HomePage({ projects }: HomePageProps) {
             <motion.h1 variants={fadeUp} className="hero-title">
               Alejandro López
               <br />
-              Full Stack Developer
+              FrontEnd Engineer
             </motion.h1>
             <motion.p variants={fadeUp} className="hero-description">
-              Passionate developer specializing in creating modern, accessible,
-              and performant web applications using React, Next.js, and
-              TypeScript. I love turning complex problems into simple, beautiful
-              designs.
+              Frontend-focused Full Stack Developer specialized in building 
+              <b> end-to-end digital products</b>, from UX strategy to scalable,
+              maintainable implementation. Product-driven mindset with a strong
+              focus on usability, system coherence, and technical quality.
             </motion.p>
             <motion.nav variants={fadeUp} className="hero-ctas">
               <motion.div
@@ -111,7 +111,9 @@ function HomePage({ projects }: HomePageProps) {
         />
       </main>
 
-      <AboutSection />
+      <div id="about">
+        <AboutSection />
+      </div>
     </div>
   );
 }

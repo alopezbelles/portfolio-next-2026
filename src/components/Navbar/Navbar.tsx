@@ -44,12 +44,12 @@ export default function Navbar({}: NavbarProps) {
             </Link>
           </li>
           <li className="nav-item">
-            <Link href="/projects" className="nav-link">
+            <Link href="/#about" className="nav-link">
               About me
             </Link>
           </li>
           <li className="nav-item">
-            <Link href="/contact" className="nav-link">
+            <Link href="/#contact" className="nav-link">
               Contact
             </Link>
           </li>

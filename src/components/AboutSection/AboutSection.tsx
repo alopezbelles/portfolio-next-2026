@@ -2,8 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
-// import ProjectsSection from "@/components/ProjectsSection/ProjectsSection";
-// import type { Project } from "@/types/project";
+import DataContact from "../DataContact/DataContact";
 import "./AboutSection.css";
 
 // interface HomePageProps {
@@ -33,7 +32,7 @@ function AboutSection() {
     <div className="about-section">
       <main className="main-content">
         <motion.section
-          className="hero-section"
+          className=""
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -47,25 +46,29 @@ function AboutSection() {
                 About Me
               </motion.h1>
               <motion.p variants={fadeUp} className="about-description">
-                Hey there!<br></br> I’m Alejandro López, a creative director
-                based in Spain. With a passion for blending creativity and
-                technical precision, I craft professional websites that
-                captivate audiences and elevate online presence.
-              </motion.p>
-              <div className="about-stats">
-                <div>
-                  <h2>+40 Years</h2>
+                Hey there!<br></br> I’m Alejandro López, a Frontend-focused Full
+                Stack Developer based in Spain. I blend technical precision with
+                creative thinking to build digital products that balance
+                usability, scalability, and long-term maintainability. I develop
+                end-to-end solutions — from UX strategy and visual systems to
+                clean, production-ready implementations — bringing strong
+                attention to system coherence and product quality.
+              </motion.p>               
+              <motion.div className="about-stats" variants={fadeUp}>
+                <motion.div variants={fadeUp}>
+                  <h2>+8 Years</h2>
                   <p>Creating Digital Products</p>
-                </div>
-                <div>
+                </motion.div>
+                <motion.div variants={fadeUp}>
                   <h2>+3 Years</h2>
                   <p>Developing Full Stack Software</p>
-                </div>
-                <div>
+                </motion.div>
+                <motion.div variants={fadeUp}>
                   <h2>End-to-end product development:</h2>
                   <p>Design, Dev & AI</p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
+              <DataContact fadeUp={fadeUp} />
             </div>
 
             <motion.figure className="profile-figure" variants={fadeUp}>
@@ -78,26 +81,6 @@ function AboutSection() {
                 className="profile-photo-about"
               />
             </motion.figure>
-            {/* <motion.nav variants={fadeUp} className="hero-ctas">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                style={{ flex: 1, display: 'flex' }}
-              >
-                <Link href="/projects" className="cta-primary" style={{ flex: 1 }}>
-                  View My Work
-                </Link>
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                style={{ flex: 1, display: 'flex' }}
-              >
-                <Link href="/contact" className="cta-secondary" style={{ flex: 1 }}>
-                  Get in Touch
-                </Link>
-              </motion.div>
-            </motion.nav> */}
           </div>
         </motion.section>
       </main>

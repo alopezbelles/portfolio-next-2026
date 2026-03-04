@@ -61,7 +61,7 @@
 
 @media (max-width: 768px) {
   .project-content {
-    padding: var(--spacing-sm);
+    padding: var(--spacing-md);
   }
 
   .project-technologies {

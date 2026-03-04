@@ -1,0 +1,62 @@
+/* Importar variables centralizadas */
+@import "../../styles/variables.css";
+
+.data-contact {
+  display: flex;
+  gap: var(--spacing-lg);
+  justify-content: space-between;
+
+  .email, .link-item {
+    font-size: var(--font-size-3xl);
+
+    /* Estilos para los links animados */
+    .contact-link {
+      position: relative;
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-all);
+
+      /* Pseudoelemento para el underline animado */
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: currentColor;
+        transition: width var(--transition-duration) var(--transition-timing);
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* ======================
+   RESPONSIVE BREAKPOINTS
+   ====================== */
+
+@media (max-width: 768px) {
+  .data-contact {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: center;
+
+    .email, .link-item {
+      font-size: var(--font-size-2xl);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .data-contact {
+    gap: var(--spacing-sm);
+
+    .email, .link-item {
+      font-size: var(--font-size-xl);
+    }
+  }
+}

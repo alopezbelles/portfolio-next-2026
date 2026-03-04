@@ -30,26 +30,20 @@ function ProjectsPage({ projects }: ProjectsPageProps) {
   return (
     <div className="projects-page">
       <main className="main-content-projects">
-        <motion.header 
+        <motion.header
           className="projects-header"
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
         >
-          <motion.div 
-            className="projects-header-titles"
-            variants={fadeUp}
-          >
+          <motion.div className="projects-header-titles" variants={fadeUp}>
             <h1 className="page-title">Projects</h1>
             <h2 className="">(2022-2026)</h2>
           </motion.div>
 
-          <motion.p 
-            className="page-description"
-            variants={fadeUp}
-          >
-            A curated collection of projects. Thoughtful, bold,<br></br> and designed to
-            make an impact.
+          <motion.p className="page-description" variants={fadeUp}>
+            A selection of digital products built <b> end-to-end</b>, <br></br> from
+            strategy and design to scalable implementation.
           </motion.p>
         </motion.header>
 
