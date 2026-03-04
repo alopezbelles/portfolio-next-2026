@@ -92,6 +92,30 @@ a {
   }
 }
 
+.cta-terciary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  transition: var(--transition-all);
+  
+  /* Reset button styles */
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-primary-dark);
+    transform: translateX(4px);
+  }
+}
+
 .tech-tag {
       background: var(--color-bg-gray);
       color: var(--color-text-primary);

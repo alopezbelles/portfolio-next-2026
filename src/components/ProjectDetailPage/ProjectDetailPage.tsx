@@ -3,6 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type { Project } from "@/types/project";
 import "./ProjectDetailPage.css";
 
@@ -56,6 +57,8 @@ const techTagVariant: Variants = {
 };
 
 function ProjectDetailPage({ project }: ProjectDetailPageProps) {
+  const router = useRouter();
+
   return (
     <article className="project-detail-page">
       <main className="main-content-project">
@@ -65,9 +68,12 @@ function ProjectDetailPage({ project }: ProjectDetailPageProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          <Link href="/" className="back-link">
+          <button 
+            onClick={() => router.back()} 
+            className="cta-terciary"
+          >
             ← Back
-          </Link>
+          </button>
         </motion.nav>
         
         <motion.section 
@@ -186,6 +192,22 @@ function ProjectDetailPage({ project }: ProjectDetailPageProps) {
             </motion.div>
           </motion.section>
         )}
+
+        {/* Bottom Back Button */}
+        <motion.nav 
+          className="project-nav"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          <button 
+            onClick={() => router.back()} 
+            className="cta-terciary"
+          >
+            ← Back
+          </button>
+        </motion.nav>
       </main>
     </article>
   );

@@ -77,7 +77,7 @@ function ProjectsSection({
 
       {showViewAllLink && (
         <footer className="work-footer">
-          <Link href="/projects" className="view-all-projects">
+          <Link href="/projects" className="cta-terciary">
             View All Projects →
           </Link>
         </footer>
