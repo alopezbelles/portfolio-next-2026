@@ -4,11 +4,14 @@ import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import ProjectsSection from "@/components/ProjectsSection/ProjectsSection";
 import AboutSection from "@/components/AboutSection/AboutSection";
+import ImageCarousel from "@/components/ImageCarousel/ImageCarousel";
 import type { Project } from "@/types/project";
+import type { GalleryImage } from "@/lib/getRandomGalleryImages";
 import "./HomePage.css";
 
 interface HomePageProps {
   projects: Project[];
+  carouselImages: GalleryImage[];
 }
 
 const fadeUp: Variants = {
@@ -29,7 +32,7 @@ const staggerContainer: Variants = {
   },
 };
 
-function HomePage({ projects }: HomePageProps) {
+function HomePage({ projects, carouselImages }: HomePageProps) {
   const handleSectionClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
     const element = document.getElementById(sectionId);
@@ -124,6 +127,7 @@ function HomePage({ projects }: HomePageProps) {
 
       <div id="about">
         <AboutSection />
+        <ImageCarousel images={carouselImages} />
         <div id="contact"></div>
       </div>
     </div>

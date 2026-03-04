@@ -74,8 +74,6 @@
 }
 
 @media (max-width: 768px) {
-
-
   .about-section {
     margin-top: var(--spacing-xl);
   }
@@ -130,5 +128,9 @@
   .profile-photo-about {
     width: 280px;
     height: 280px;
+  }
+
+  .about-section {
+    margin: var(--spacing-xl) 0 var(--spacing-xl) 0;
   }
 }

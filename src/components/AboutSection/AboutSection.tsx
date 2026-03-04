@@ -80,7 +80,7 @@ function AboutSection() {
                 priority
                 className="profile-photo-about"
               />
-            </motion.figure>
+            </motion.figure>            
           </div>
         </motion.section>
       </main>
