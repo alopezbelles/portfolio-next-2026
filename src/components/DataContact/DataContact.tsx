@@ -12,7 +12,7 @@ function DataContact({ fadeUp }: DataContactProps) {
     <div className="data-contact" id="contact">
       <motion.h2 variants={fadeUp} className="email">
         <Link 
-          href="mailto:alopezbelles@gmail.com?subject=Hi%20Alejandro&body=Hi%20Alejandro,%20I%20would%20like%20to%20get%20in%20touch%20with%20you..." 
+          href="mailto:alopezbelles@gmail.com?subject=Let's%20work%20together!&body=Hi%20Alejandro,%0D%0A%0D%0AI'm%20interested%20in%20discussing%20a%20project%20with%20you.%0D%0A%0D%0ABest%20regards," 
           className="contact-link"
         >
           alopezbelles@gmail.com
