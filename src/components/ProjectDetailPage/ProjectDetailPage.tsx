@@ -84,7 +84,6 @@ function ProjectDetailPage({ project }: ProjectDetailPageProps) {
         >
           <header className="project-header">
             <motion.h1 
-              className="project-title"
               variants={fadeUp}
             >
               {project.title}

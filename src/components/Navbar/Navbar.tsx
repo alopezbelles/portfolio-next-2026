@@ -6,7 +6,6 @@ import { useState } from 'react';
 import './Navbar.css';
 
 interface NavbarProps {
-  // Props futuras si las necesitas
 }
 
 export default function Navbar({}: NavbarProps) {
@@ -14,6 +13,16 @@ export default function Navbar({}: NavbarProps) {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleSectionClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      // Actualizar la URL sin recargar la página
+      window.history.pushState(null, '', `/#${sectionId}`);
+    }
   };
 
   return (
@@ -44,12 +53,20 @@ export default function Navbar({}: NavbarProps) {
             </Link>
           </li>
           <li className="nav-item">
-            <Link href="/#about" className="nav-link">
+            <Link 
+              href="/#about" 
+              className="nav-link"
+              onClick={(e) => handleSectionClick(e, 'about')}
+            >
               About me
             </Link>
           </li>
           <li className="nav-item">
-            <Link href="/#contact" className="nav-link">
+            <Link 
+              href="/#contact" 
+              className="nav-link"
+              onClick={(e) => handleSectionClick(e, 'contact')}
+            >
               Contact
             </Link>
           </li>
@@ -77,34 +94,40 @@ export default function Navbar({}: NavbarProps) {
                 className="mobile-nav-link"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Inicio
+                Home
               </Link>
-            </li>
-            <li className="mobile-nav-item">
-              <Link 
-                href="/about" 
-                className="mobile-nav-link"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Sobre mí
-              </Link>
-            </li>
+            </li>            
             <li className="mobile-nav-item">
               <Link 
                 href="/projects" 
                 className="mobile-nav-link"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Proyectos
+                Projects
               </Link>
             </li>
             <li className="mobile-nav-item">
               <Link 
-                href="/contact" 
+                href="/#about" 
                 className="mobile-nav-link"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => {
+                  handleSectionClick(e, 'about');
+                  setIsMobileMenuOpen(false);
+                }}
               >
-                Contacto
+                About me
+              </Link>
+            </li>
+            <li className="mobile-nav-item">
+              <Link 
+                href="/#contact" 
+                className="mobile-nav-link"
+                onClick={(e) => {
+                  handleSectionClick(e, 'contact');
+                  setIsMobileMenuOpen(false);
+                }}
+              >
+                Contact
               </Link>
             </li>
           </ul>

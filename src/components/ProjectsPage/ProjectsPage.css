@@ -37,7 +37,6 @@
 }
 
 .page-title {
-  font-size: var(--font-size-5xl);
   text-align: start;
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
@@ -66,10 +65,6 @@
     padding: var(--spacing-2xl) 0 var(--spacing-xl) 0;
   }
   
-  .page-title {
-    font-size: var(--font-size-4xl);
-  }
-  
   .page-description {
     font-size: var(--font-size-base);
     max-width: 700px;
@@ -84,11 +79,7 @@
   .projects-header {
     gap: var(--spacing-md);
     padding: var(--spacing-xl) 0 var(--spacing-lg) 0;
-  }
-  
-  .page-title {
-    font-size: var(--font-size-3xl);
-  }
+  }  
   
   .page-description {
     font-size: var(--font-size-base);
@@ -104,10 +95,6 @@
   .projects-header {
     padding: var(--spacing-2xl) 0 var(--spacing-md) 0;
     gap: var(--spacing-sm);
-  }
-  
-  .page-title {
-    font-size: var(--font-size-2xl);
   }
   
   .page-description {

@@ -57,9 +57,6 @@ function ProjectsSection({
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
     >
-      <motion.h2 className="section-title" variants={fadeUp}>
-        {title}
-      </motion.h2>
 
       <motion.div className="projects-grid" variants={projectsStagger}>
         {filteredProjects.map((project) => (

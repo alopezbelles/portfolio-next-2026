@@ -37,7 +37,7 @@ function ProjectsPage({ projects }: ProjectsPageProps) {
           animate="visible"
         >
           <motion.div className="projects-header-titles" variants={fadeUp}>
-            <h1 className="page-title">Projects</h1>
+            <h1>Projects</h1>
             <h2 className="">(2022-2026)</h2>
           </motion.div>
 

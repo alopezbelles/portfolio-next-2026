@@ -7,7 +7,7 @@
 
 .about-content {
   display: flex;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-3xl);
 }
 
 .about-info {
@@ -17,7 +17,7 @@
 }
 
 .about-description {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   line-height: var(--line-height-relaxed);
   color: var(--color-text-secondary);
   margin: 0;
@@ -27,11 +27,18 @@
 .about-stats {
   display: flex;
   gap: var(--spacing-5xl);
+
+  p {
+    font-size: var(--font-size-base);
+  }
 }
 
 .profile-figure {
   margin: 0;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .profile-photo-about {
@@ -47,7 +54,9 @@
 
 @media (max-width: 1024px) {
   .about-content {
-    gap: var(--spacing-md);
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    align-items: center;
   }
 
   .about-stats {
@@ -59,17 +68,13 @@
   }
 
   .profile-photo-about {
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
   }
 }
 
 @media (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-    gap: var(--spacing-lg);
-    align-items: center;
-  }
+
 
   .about-section {
     margin-top: var(--spacing-xl);
@@ -90,11 +95,6 @@
   .about-description {
     font-size: var(--font-size-base);
     text-align: center;
-  }
-
-  .profile-photo-about {
-    width: 350px;
-    height: 350px;
   }
 }
 

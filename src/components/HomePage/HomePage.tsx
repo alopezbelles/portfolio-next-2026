@@ -30,6 +30,16 @@ const staggerContainer: Variants = {
 };
 
 function HomePage({ projects }: HomePageProps) {
+  const handleSectionClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      // Actualizar la URL sin recargar la página
+      window.history.pushState(null, '', `/#${sectionId}`);
+    }
+  };
+
   return (
     <div className="home-page">
       <main className="main-content">
@@ -67,7 +77,7 @@ function HomePage({ projects }: HomePageProps) {
               FrontEnd Engineer
             </motion.h1>
             <motion.p variants={fadeUp} className="hero-description">
-              Frontend-focused Full Stack Developer specialized in building 
+              Frontend-focused Full Stack Developer specialized in building
               <b> end-to-end digital products</b>, from UX strategy to scalable,
               maintainable implementation. Product-driven mindset with a strong
               focus on usability, system coherence, and technical quality.
@@ -92,11 +102,12 @@ function HomePage({ projects }: HomePageProps) {
                 style={{ flex: 1, display: "flex" }}
               >
                 <Link
-                  href="/contact"
+                  href="/#about"
                   className="cta-secondary"
                   style={{ flex: 1 }}
+                  onClick={(e) => handleSectionClick(e, 'about')}
                 >
-                  Get in Touch
+                  About Me
                 </Link>
               </motion.div>
             </motion.nav>
@@ -113,6 +124,7 @@ function HomePage({ projects }: HomePageProps) {
 
       <div id="about">
         <AboutSection />
+        <div id="contact"></div>
       </div>
     </div>
   );

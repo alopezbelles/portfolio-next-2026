@@ -37,7 +37,6 @@
 }
 
 .page-title {
-  font-size: var(--font-size-5xl);
   text-align: start;
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
@@ -64,10 +63,6 @@
   
   .projects-header {
     padding: var(--spacing-2xl) 0 var(--spacing-xl) 0;
-  }
-  
-  .page-title {
-    font-size: var(--font-size-4xl);
   }
   
   .page-description {
@@ -106,10 +101,7 @@
     gap: var(--spacing-sm);
   }
   
-  .page-title {
-    font-size: var(--font-size-2xl);
-  }
-  
+
   .page-description {
     font-size: var(--font-size-sm);
     line-height: var(--line-height-base);
