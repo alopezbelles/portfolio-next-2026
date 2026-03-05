@@ -26,6 +26,10 @@ h1 {
   font-size: var(--font-size-5xl);
 }
 
+h2 {
+  font-size: var(--font-size-3xl);
+}
+
 body {
   color: var(--color-text-primary);
   background: var(--color-bg-primary);
@@ -156,12 +160,18 @@ a {
   h1 {
     font-size: var(--font-size-4xl);
   }
+  h2 {
+  font-size: var(--font-size-2xl);
+}
 }
 
 @media (max-width: 480px) {  
   h1 {
     font-size: var(--font-size-3xl);
   }
+  h2 {
+  font-size: var(--font-size-xl);
+}
 }
 
 
