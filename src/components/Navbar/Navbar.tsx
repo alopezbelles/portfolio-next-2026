@@ -15,16 +15,6 @@ export default function Navbar({}: NavbarProps) {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleSectionClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    e.preventDefault();
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      // Actualizar la URL sin recargar la página
-      window.history.pushState(null, '', `/#${sectionId}`);
-    }
-  };
-
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -53,20 +43,12 @@ export default function Navbar({}: NavbarProps) {
             </Link>
           </li>
           <li className="nav-item">
-            <Link 
-              href="/#about" 
-              className="nav-link"
-              onClick={(e) => handleSectionClick(e, 'about')}
-            >
+            <Link href="/about" className="nav-link">
               About me
             </Link>
           </li>
           <li className="nav-item">
-            <Link 
-              href="/#contact" 
-              className="nav-link"
-              onClick={(e) => handleSectionClick(e, 'contact')}
-            >
+            <Link href="/#contact" className="nav-link">
               Contact
             </Link>
           </li>
@@ -108,12 +90,9 @@ export default function Navbar({}: NavbarProps) {
             </li>
             <li className="mobile-nav-item">
               <Link 
-                href="/#about" 
+                href="/about" 
                 className="mobile-nav-link"
-                onClick={(e) => {
-                  handleSectionClick(e, 'about');
-                  setIsMobileMenuOpen(false);
-                }}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 About me
               </Link>
@@ -122,10 +101,7 @@ export default function Navbar({}: NavbarProps) {
               <Link 
                 href="/#contact" 
                 className="mobile-nav-link"
-                onClick={(e) => {
-                  handleSectionClick(e, 'contact');
-                  setIsMobileMenuOpen(false);
-                }}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact
               </Link>

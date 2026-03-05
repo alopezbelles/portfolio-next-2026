@@ -33,15 +33,6 @@ const staggerContainer: Variants = {
 };
 
 function HomePage({ projects, carouselImages }: HomePageProps) {
-  const handleSectionClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    e.preventDefault();
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      // Actualizar la URL sin recargar la página
-      window.history.pushState(null, '', `/#${sectionId}`);
-    }
-  };
 
   return (
     <div className="home-page">
@@ -105,10 +96,9 @@ function HomePage({ projects, carouselImages }: HomePageProps) {
                 style={{ flex: 1, display: "flex" }}
               >
                 <Link
-                  href="/#about"
+                  href="/about"
                   className="cta-secondary"
                   style={{ flex: 1 }}
-                  onClick={(e) => handleSectionClick(e, 'about')}
                 >
                   About Me
                 </Link>
