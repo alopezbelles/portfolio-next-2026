@@ -1,6 +1,7 @@
 "use client";
 import { motion, Variants } from "framer-motion";
 import AboutSection from "@/components/AboutSection/AboutSection";
+import CareerJourney from "@/components/CareerJourney/CareerJourney";
 import GridStack from "@/components/GridStack/GridStack";
 import "./AboutPage.css";
 
@@ -29,6 +30,7 @@ function AboutPage({}: AboutPageProps) {
     <div className="about-page">
       <main className="main-content-about">
         <AboutSection />
+        <CareerJourney />
         <GridStack />
       </main>
     </div>
